@@ -2,7 +2,7 @@ import ApiService from './ApiService'
 
 class CharacterService extends ApiService {
   getCharacter(params) {
-    const query = this.pagination(params)
+    var query = this.pagination(params)
 
     if(params.hasOwnProperty('search') && params.search.trim().length) {
       query += `&nameStartsWith=${encodeURIComponent(params.search.trim())}`;
@@ -19,3 +19,5 @@ class CharacterService extends ApiService {
     return this.getApi("/v1/public/characters", this.getCharacter(params))
   }
 }
+
+export default new CharacterService()
