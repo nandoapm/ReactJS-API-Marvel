@@ -1,0 +1,23 @@
+.card {
+  background-color: #202020;
+  width: 150px;
+  height: 330px;
+  margin: 5px;  
+}
+
+.card:hover {
+  background-color: red;
+}
+
+img {
+  width: 100%;
+}
+
+.name {
+  color: whitesmoke;
+  padding-left: 10px;
+  padding-top: 15px;
+  height: 100px;
+}
+
+

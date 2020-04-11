@@ -11,6 +11,10 @@ body {
   font: 400 14px RobotoCondensed Bold, sans-serif;
   text-transform: uppercase;
   color: #ffffdd;
-  background: #202020;
+  background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
 }

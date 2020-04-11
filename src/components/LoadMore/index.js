@@ -1,8 +1,8 @@
 import React from "react";
-//import './ButtonLoadMore.css';
+import './styles.css'
 
 const ButtonLoadMore = (props) => (
-    <button onClick={props.loadMore} className="load-more-button">veja mais...</button>
+    <button onClick={props.loadMore} className="btn-load-more">veja mais...</button>
 )
 
 export default ButtonLoadMore

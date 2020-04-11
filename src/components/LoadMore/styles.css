@@ -1,0 +1,36 @@
+.btn-load-more {
+  background-color: #e62429;
+  width: 200px;
+  height: 60px;
+  margin: 0 auto;
+  color: aliceblue;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: medium;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-load-more::after,
+.btn-load-more::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: -25px;
+  background-color: #FFF;
+}
+.btn-load-more::after {
+  left: -25px;
+  top: -20px;
+  transform: rotate(-45deg);
+}
+.btn-load-more::before {
+  right: -25px;
+  top: 40px;
+  transform: rotate(-45deg);
+}
+
+.btn-load-more:hover {
+  background-color: #cc0000;
+}

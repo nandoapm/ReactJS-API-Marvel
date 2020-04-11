@@ -25,7 +25,7 @@ export function moreCharacters(params) {
               .then(res => res.json())
               .then(json => dispatch({ type: "MORE_CHARACTERS", container: json.data }));
       } else {
-          console.log("All characters have been listed!")
+          console.log("listagem de personagens")
       }
   }
 }

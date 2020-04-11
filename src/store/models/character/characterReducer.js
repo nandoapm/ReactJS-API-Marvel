@@ -1,7 +1,7 @@
 
 var GET_STATE = {
   offset: 0,
-  limit: 20,
+  limit: 18,
   total: 0,
   count: 0,
   results: [],

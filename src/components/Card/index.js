@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import './styles.css'
+
 var Card = (props) => {
     
     function buildFullImagePath() {
@@ -11,11 +13,11 @@ var Card = (props) => {
     return (
         <article className="card">
             <Link to={{ pathname: `/profile/${props.selected.id}` }}>
-                <picture className="thumbnail">
+                <picture className="image">
                     <img src={buildFullImagePath()} alt={props.selected.name} />
                 </picture>
-                <div className="card-content">
-                    <h2>{props.selected.name}</h2>
+                <div className="name">
+                    <h4>{props.selected.name}</h4>
                 </div>
             </Link>
         </article>

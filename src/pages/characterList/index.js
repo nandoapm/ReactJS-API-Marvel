@@ -7,6 +7,8 @@ import Loading from '../../components/Loading'
 import Card from '../../components/Card'
 import ButtonLoadMore from '../../components/LoadMore'
 
+import './styles.css'
+
 const mapStateToProps = state => ({ character: state.character });
 class CharacterList extends React.Component {
   constructor(props) {
@@ -87,25 +89,18 @@ class CharacterList extends React.Component {
         
     return (
         <div>
-            <div className="card-list-header">
+            <div className="container-search">
                 {searchTerm.length > 0
                     ? <div><font>{total} results for <b>{searchTerm}</b></font> <button title="Remove search" onClick={this.removeSearch}>XXX</button></div>
-                    : <input type="text" placeholder="Buscar personagem..." name="search" onKeyDown={this.updateSearch} defaultValue={this.state.search} />
-                }
-
+                    : <input type="text" placeholder="Buscar personagem..." name="search" onKeyDown={this.updateSearch} defaultValue={this.state.search} />}
             </div>
-            <div>
-            {this.state.loading ? <Loading /> : null}
-            </div>
+            
+            <div className="container-load">{ this.state.loading ? <Loading /> : null }</div>
 
-            <section className="cards">
-                {results.map(char => <Card key={char.id} selected={char} />)}
-            </section>
-            <div>
-                {this.state.hasMore
-                    ? (this.state.loading ? <Loading /> : <ButtonLoadMore loadMore={this.loadMore} />)
-                    : null
-                }
+            <section className="container-main">{ results.map(char => <Card key={char.id} selected={char} />) }</section>
+            
+            <div className="container-btn">
+                {this.state.hasMore ? (this.state.loading ? <Loading /> : <ButtonLoadMore loadMore={this.loadMore} />) : null }
             </div>
         </div>
     )
