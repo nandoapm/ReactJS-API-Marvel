@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { FiXSquare } from 'react-icons/fi'
 
 import { moreCharacters, getCharacters } from '../../store/models/character/characterActions'
 
@@ -84,8 +85,9 @@ class CharacterList extends React.Component {
             <div>
                 <div className="container-search">
                     {nameSearch.length > 0
-                        ? <div><font>{total} resultados para <b>{nameSearch}</b></font> <button title="Remove search" onClick={this.closeSearch}>XXX</button></div>
-                        : <input type="text" placeholder="Buscar personagem..." name="search" onKeyDown={this.search} defaultValue={this.state.search} />}
+                        ? <div className="container-text"><font>{total} resultados para <b>{nameSearch}</b></font> <button title="Remove search" onClick={this.closeSearch}><FiXSquare size={ 30 } color="#202020" /></button></div>
+                        : <input type="text" placeholder="Buscar personagem..." name="search" onKeyDown={this.search} defaultValue={this.state.search} /> 
+                    }
                 </div>
                 
                 <div className="container-load">{ this.state.loading ? <Loading /> : null }</div>

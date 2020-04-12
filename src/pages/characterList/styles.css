@@ -1,9 +1,9 @@
 .container-search {
   width: 100%;
-  max-width: 1020px;
+  max-width: 950px;
   margin: 0 auto;
-  padding: 10px;
-  margin-top: 80px;
+  margin-top: 90px;
+  margin-bottom: 10px;
 }
 
 .container-search input {
@@ -21,6 +21,11 @@
 
 .container-search input[type=text]:focus {
   width: 100%;
+}
+
+.container-search button {
+  border: none;
+  background-color: transparent;
 }
 
 .container-load {
@@ -50,3 +55,39 @@
   margin-bottom: 10px;
 }
 
+.container-text {
+  color: #202020;
+  display: flex;
+  align-items: center;
+}
+
+.container-text button {
+  padding: 5px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 970px) {
+  .container-search {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container-search {
+    max-width: 635px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container-search {
+    max-width: 465px;
+    
+  }
+}
+
+@media (max-width: 480px) {
+  .container-search {
+    max-width: 320px;
+  }
+}
