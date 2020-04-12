@@ -1,0 +1,102 @@
+.container-profile {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 80px;
+}
+
+.container-load {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.info-profile {
+  display: flex;
+}
+
+.img-profile {
+  width: 300px;
+  border: 2px solid #D3D3D3;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.desc-profile {
+  padding: 10px;
+  margin-left: 20PX;
+}
+
+.desc-profile h3 {
+  color: #202020;
+  margin-bottom: 10px;
+}
+
+.desc-profile p {
+  color: #202020;
+  margin-bottom: 10px;
+}
+
+.form-profile {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.form-profile input {
+  font-size: larger;
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid #990000;
+  margin-bottom: 10px;
+
+}
+
+.form-profile textarea {
+  font-size: medium;
+  padding: 5px;
+  width:400px;
+  height:100px;
+  border: 2px solid #990000;
+}
+
+.btn-profile {
+  background-color: #e62429;
+  width: 150px;
+  height: 40px;
+  margin: 0 auto;
+  color: aliceblue;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: small;
+  position: relative;
+  cursor: pointer;
+  margin-top: 30px;
+  border: none;
+}
+
+.btn-profile::after,
+.btn-profile::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -30px;
+  background-color: #ffffff;
+}
+.btn-profile::after {
+  left: -10px;
+  top: -10px;
+  transform: rotate(-45deg);
+}
+.btn-profile::before {
+  right: -12px;
+  top: 29px;
+  transform: rotate(-45deg);
+}
+
+.btn-profile:hover {
+  background-color: #cc0000;
+}

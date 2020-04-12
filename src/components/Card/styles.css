@@ -2,22 +2,30 @@
   background-color: #202020;
   width: 150px;
   height: 330px;
-  margin: 5px;  
+  margin: 5px; 
 }
 
 .card:hover {
-  background-color: red;
+  background-color: #cc0000;
 }
 
 img {
   width: 100%;
 }
 
+.container {
+  width: 100%;
+  background-color: #e62429;
+  height: 5px;
+  transition: height 2s;
+  margin-top: -3px;
+}
+
 .name {
   color: whitesmoke;
   padding-left: 10px;
   padding-top: 15px;
-  height: 100px;
+  height: 105px;
 }
 
 

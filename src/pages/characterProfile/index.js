@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { selectCharacter, unselectCharacter } from '../../store/models/character/characterActions'
 
-//import SerieCardList from "../serie/SerieCardList";
+import './styles.css'
 
-const mapStateToProps = state => ({ selected: state.character.selected });
+const StateToProps = state => ({ selected: state.character.selected });
 
 class CharacterProfile extends React.Component {
     constructor(props) {
@@ -73,53 +73,35 @@ class CharacterProfile extends React.Component {
 
         event.preventDefault();
     }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////// ENTRA O RENDER
+    
     render() {
-        /////////////////////////////////////////////////AREA PARA O CARREGAMENTO
         if (!this.state.load)
-            return (<h3 className="text-center">Carregando...</h3>);
+            return (<h3 className="container-load">Carregando...</h3>);
         
         return (
-            <div>
-                <article className="profile-card">
-                    <div className="profile-info">
-                        <img src={this.buildFullImagePath()} alt={this.props.name} className="profile-pic" />
-                        {this.state.edit
-                            ?<form onSubmit={this.onSubmit}>
+            <div className="container-profile">
+                <section className="card-profile">
+                    <div className="info-profile">
+                        <img src={this.buildFullImagePath()} className="img-profile" alt={this.props.name} />
+                        {this.state.edit ? 
+                            
+                            <form onSubmit={this.onSubmit} className="form-profile" >
                                 <input type="text" value={this.state.name} name="name" onChange={this.valueChanged} />
                                 <textarea type="text" value={this.state.desc} name="description" onChange={this.valueChanged} />
-                                <button>Salvar</button>
-                            </form>
-                            :<div>
+                                <button className="btn-profile">Salvar</button>
+                            </form> : 
+                            
+                            <div className="desc-profile">
                                 <h3>{this.state.name}</h3>
                                 <p>{this.state.desc || "Descrição não encontrada."}</p>
-                                <button onClick={this.editCharacter}>Editar</button>
+                                <button className="btn-profile" onClick={this.editCharacter}>Editar</button>
                             </div>
                         }
                     </div>
-                    
-                    <div className="profile-relations">
-                        <div className="rel-item">
-                            <font>Series</font>
-                            <font>{this.props.selected.series.available}</font>
-                        </div>
-                        <div className="rel-item">
-                            <font>Events</font>
-                            <font>{this.props.selected.events.available}</font>
-                        </div>
-                        <div className="rel-item">
-                            <font>Comics</font>
-                            <font>{this.props.selected.comics.available}</font>
-                        </div>
-                        <div className="rel-item">
-                            <font>Stories</font>
-                            <font>{this.props.selected.stories.available}</font>
-                        </div>
-                    </div>
-                </article>
+                </section>
             </div>
         )
     }
 }
 
-export default connect(mapStateToProps)(CharacterProfile);
+export default connect(StateToProps)(CharacterProfile);

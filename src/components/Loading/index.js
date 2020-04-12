@@ -1,7 +1,6 @@
 import React from "react";
+import './styles.css'
 
-const Loading = (prop) => (
-    <h3 className="text-center">Carregando...</h3>
-)
-
-export default Loading
+export default function Loading() {
+    return <h3 className="text">Carregando...</h3>
+}

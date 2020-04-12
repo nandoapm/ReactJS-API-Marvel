@@ -6,13 +6,13 @@ var GET_STATE = {
   count: 0,
   results: [],
   selected: {},
-  searchTerm: ""
+  nameSearch: ""
 };
 
 const character = (state = GET_STATE, action) => {
   switch (action.type) {
       case "GET_CHARACTERS":
-              return { ...state, ...action.container, searchTerm: action.searchTerm };
+              return { ...state, ...action.container, nameSearch: action.nameSearch };
       case "MORE_CHARACTERS":
           return {
               ...state,

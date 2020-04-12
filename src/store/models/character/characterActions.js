@@ -1,12 +1,12 @@
 import CharacterService from '../../../services/CharacterService'
 
 // função para inicializar os personagens
-export function initialCharacters(params) {
+export function getCharacters(params) {
   return dispatch => {
     const { limit, search } = params
     CharacterService.showList({offset: 0, limit, search})
       .then(res => res.json())
-      .then(json => dispatch({ type: 'GET_CHARACTERS', container: json.data, searchTerm: search }))
+      .then(json => dispatch({ type: 'GET_CHARACTERS', container: json.data, nameSearch: search }))
       .catch(err => console.log('Teste Erro', err))
   }
 }
