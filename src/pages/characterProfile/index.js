@@ -13,7 +13,7 @@ class CharacterProfile extends React.Component {
         this.state = {
             edit: false,
             name: "",
-            desc: "",
+            description: "",
             load: Object.keys(this.props.selected).length > 0
         };
 
@@ -31,11 +31,11 @@ class CharacterProfile extends React.Component {
     componentDidUpdate() {
         if (!this.state.load) {
             if (localStorage.getItem(this.props.selected.id)) {
-                const { name, desc } = JSON.parse(localStorage.getItem(this.props.selected.id));
-                this.setState({ name: name, desc: desc, load: Object.keys(this.props.selected).length > 0 });
+                const { name, description } = JSON.parse(localStorage.getItem(this.props.selected.id));
+                this.setState({ name: name, description: description, load: Object.keys(this.props.selected).length > 0 });
             } else {
-                const { name, desc } = this.props.selected;
-                this.setState({ name, desc, load: Object.keys(this.props.selected).length > 0 });
+                const { name, description } = this.props.selected;
+                this.setState({ name, description, load: Object.keys(this.props.selected).length > 0 });
             }
         }
     }
@@ -58,18 +58,18 @@ class CharacterProfile extends React.Component {
         const key = this.props.selected.id;
 
         if (localStorage.getItem(key)) {
-            const { name, desc } = JSON.parse(localStorage.getItem(key));
-            this.setState({ edit: true, name: name, desc: desc });
+            const { name, description } = JSON.parse(localStorage.getItem(key));
+            this.setState({ edit: true, name: name, description: description });
         } else {
-            const { name, desc } = this.props.selected;
-            this.setState({ edit: true, name, desc });
+            const { name, description } = this.props.selected;
+            this.setState({ edit: true, name, description });
         }
     }
 
     onSubmit(event) {
         this.setState({ edit: false });
 
-        localStorage.setItem(this.props.selected.id, JSON.stringify({ name: this.state.name, desc: this.state.desc }));
+        localStorage.setItem(this.props.selected.id, JSON.stringify({ name: this.state.name, description: this.state.description }));
 
         event.preventDefault();
     }
@@ -87,13 +87,13 @@ class CharacterProfile extends React.Component {
                             
                             <form onSubmit={this.onSubmit} className="form-profile" >
                                 <input type="text" value={this.state.name} name="name" onChange={this.valueChanged} />
-                                <textarea type="text" value={this.state.desc} name="description" onChange={this.valueChanged} />
+                                <textarea type="text" value={this.state.description} name="description" onChange={this.valueChanged} />
                                 <button className="btn-profile">Salvar</button>
                             </form> : 
                             
                             <div className="desc-profile">
                                 <h3>{this.state.name}</h3>
-                                <p>{this.state.desc || "Descrição não encontrada."}</p>
+                                <p>{this.state.description || "Descrição não encontrada."}</p>
                                 <button className="btn-profile" onClick={this.editCharacter}>Editar</button>
                             </div>
                         }
